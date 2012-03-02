@@ -1,0 +1,10 @@
+RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RedirectMatch temp ^/blog/wp-admin$ http://www.dogvacay.com/blog/wp-admin/
+    RewriteRule blog$ /blog/ [L]
+    RewriteRule blog/wp-admin$ /blog/wp-admin/ [L]
+    RewriteRule ^$ app/webroot/ [L]
+    RewriteRule (.*) app/webroot/$1 [L]
+</IfModule>
+AddHandler php5-script .php
